@@ -85,5 +85,5 @@ Example 3: Will return any title in your Movie library beginning with "Lord".  T
 - Clean up syntax checking for dates
 - Test and fix for TV series checking also 
 
-## Lastly:
+## Lastly [Disclaimer]:
 - I don't expect that anything could go wrong using these methods.  They seem far safer than messing with the Sqlite db directly, especially since Plex have modified the executable somehow.  All this said, your mileage may vary.  I have taken all care possible, but make no guarantees - all responsibility is yours!
