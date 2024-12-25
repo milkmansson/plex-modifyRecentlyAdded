@@ -87,5 +87,8 @@ Example 3: Will return any title in your Movie library containing "Lord".  This 
 - Test and fix for TV series checking also, adding logic for episodes and series
 - adjust the default token to come from environment variables, eg, use a value from: ```os.environ.get("PLEX_TOKEN")```
 
+## [seeDuplicates.py] Show items which have duplicate files
+_Still a work in progress_ Allows me to see items with duplicate files in the console so I can fish for and delete them (as opposed to mess around and find them in the GUI).  Will display these.
+
 ## Lastly [Disclaimer]:
 - I don't expect that anything could go wrong using these methods.  They seem far safer than messing with the Sqlite db directly, especially since Plex have modified the executable somehow.  All this said, your mileage may vary.  I have taken all care possible, but make no guarantees - all responsibility is yours!
