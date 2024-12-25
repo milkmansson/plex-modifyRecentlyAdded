@@ -32,23 +32,23 @@ parser.add_argument("-y", "--Confirm", help = "Confirms doing the action on all 
 args = parser.parse_args()
 
 if not args.TOKEN:
-    print("No PLEX TOKEN (-T XXXXXX) given")
+    print(bcolors.FAIL + "    No PLEX TOKEN (-T XXXXXX) given" + bcolors.ENDC)
     sys.exit(2)
 
 if not args.Library:
-    print('No Library (-l "Movies") given')
+    print(bcolors.FAIL + '    No Library (-l "Movies") given' + bcolors.ENDC)
     sys.exit(2)
 
 if not args.Title and not args.Plexid and not args.Guid and not args.Number:
-    print('No Title (-t "Title") or Plex ID (-p "PLEXID") or GUID (-g "agent://nnnnnnn") given')
+    print(bcolors.FAIL + '    No Title (-t "Title") or Plex ID (-p "PLEXID") or GUID (-g "agent://nnnnnnn") given' + bcolors.ENDC)
     sys.exit(2)
 
 if not args.Date:
-    print('No Date (-t "date") given')
+    print(bcolors.FAIL + '    No Date (-t "date") given' + bcolors.ENDC)
     sys.exit(2)
 
 if not args.BaseURL:
-    print('No BaseURL (-b "http://localhost:32400") given')
+    print(bcolors.FAIL + '    No BaseURL (-b "http://localhost:32400") given' + bcolors.ENDC)
     sys.exit(2)
 
 from plexapi.server import PlexServer
@@ -72,16 +72,16 @@ elif args.Number:
 # If search returns one (becomes native object type) correct to list of one, display it, correct plural
 if not isinstance(searchList,list):
     searchList = [searchList]
-    print(" * Found " + str(len(searchList)) + " " + str(sectionType))
+    print(bcolors.OKCYAN + " * Found " + str(len(searchList)) + " " + str(sectionType) + bcolors.ENDC)
 else:
-    print(" * Found " + str(len(searchList)) + " " + str(sectionType) + "s)")
+    print(bcolors.OKCYAN + " * Found " + str(len(searchList)) + " " + str(sectionType) + "s" + bcolors.ENDC)
 
 # Prepare Update dict content
 updates = {"addedAt.value": args.Date}
 
 # Iterate results
 for i, val in enumerate(searchList):
-    print("   - [" + str(i) + "] " + bcolors.BOLD + val.title + bcolors.ENDC)
+    print("   - [" + str(i) + "] " + bcolors.BOLD + val.title + bcolors.ENDC + " (" + str(val.originallyAvailableAt.year) + ")")
     print("      Added at: " + str(val.addedAt))
     print("      Plex ID: " + str(val.guid))
     previousDate = val.addedAt
