@@ -81,12 +81,12 @@ updates = {"addedAt.value": args.Date}
 
 # Iterate results
 for i, val in enumerate(searchList):
-    print("   - [" + str(i) + "] " + bcolors.BOLD + val.title + bcolors.ENDC + " (" + str(val.originallyAvailableAt.year) + ")")
+    print("   - [" + str(i + 1) + "] " + bcolors.BOLD + val.title + bcolors.ENDC + " (" + str(val.originallyAvailableAt.year) + ")")
     print("      Added at: " + str(val.addedAt))
     print("      Plex ID: " + str(val.guid))
     previousDate = val.addedAt
     for k, guid in enumerate(val.guids):
-        print("      GUID[" + str(k) + "]: " + str(guid.id))
+        print("      GUID[" + str(k + 1) + "]: " + str(guid.id))
 
     # Find the exact match, avoid any text matching issues with the API eg duplicates.
     item = library.getGuid(val.guid)

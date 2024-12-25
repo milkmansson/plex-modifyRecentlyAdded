@@ -76,7 +76,7 @@ Example 2: Because the first two results are the same title, I'm specifying one 
 [user@server plexscripts]$
 ```
 
-Example 3: Will return any title in your Movie library beginning with "Lord".  This will include any 'lord of the rings' or 'lord of the flies', etc etc.  Note that if you specify the year as part of the title, it will not be found since Plex stores this value separately from the title:
+Example 3: Will return any title in your Movie library containing "Lord".  This will include any 'lord of the rings', 'lord of the flies', 'sealord', etc etc.  Note that if you specify the year as part of the title, it will not be found since Plex stores this value separately from the title:
 ```console
 [user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -t "Lord"
 ```
