@@ -1,7 +1,7 @@
 # Plex Scripts
 Some minor scripts for plex that made my life a million times better
 
-## Modify or remove items from the 'recently added' list
+## [modifyRecentlyAdded.py] Modify or remove items from the 'recently added' list
 This feature doesn't exist in the UI, and googling a bit, it has had only a few mentions, but from a long time ago.  Just before I kicked off editing the DB directly, I found a neat post from a guy who shared the basics of some python to remove a title from the list.  Problem for me was that there were 100's because I just removed a lot of duplicate files. (For some unknown reason, manually deleting a duplicated source file causes plex to completely rescan, and the item comes back to the very front of the "recently added" list.  The sample code I found seemed to work, but not all the time.  After some digging, it was when items had similar names, but different years, or titles with Chinese characters, etc.  So I had a crack at doing something better.  
 * [Original link/idea](https://www.reddit.com/r/PleX/comments/11svszf/remove_movie_from_recently_added/)
 * [Plex Python library](https://python-plexapi.readthedocs.io/en/latest/introduction.html)
