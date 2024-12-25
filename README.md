@@ -28,7 +28,7 @@ Purpose of the script is to have you find what items you want addressed, then ru
 If your data for a switch has a space in it, you will need to specify it in double quotes.
 
 ### Extra Notes
-- Dates in the future will work.
+- Dates in the future will work, and this will have the obvious result of puting the title further forward in the list.
 - Haven't tried it against tv shows yet.  I suspect it might want a bit more work and a few more options, however, this is a starter for 10.
 - This is my first foray into Python, and indeed posting anything to Github.  AKA: I have proper script kiddied this up.  I googled what I needed when I needed, to start understanding Python syntax.  I have had success, please try it as you wish, I'll happily take any feedback.
 
@@ -39,24 +39,24 @@ Example 1: see most recent 3 items on the Recently Added list.  Note the text sh
  * Found 3 movies
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
-      Plex ID: plex://movie/6234353454ccb34a1cf31d465fad
-      GUID[0]: imdb://tt2723452640
-      GUID[1]: tmdb://104234453905
-      GUID[2]: tvdb://33603234502
+      Plex ID: plex://movie/634a1cf31d465234353454ccb34a1cf31d465f
+      GUID[0]: imdb://tt27234526407234
+      GUID[1]: tmdb://1053905425390534
+      GUID[2]: tvdb://3360539055390532
       ! Date would have changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43
    - [1] Movie Title Number One (2024)
       Added at: 2024-12-23 03:48:53
-      Plex ID: plex://movie/641c04c7bf014a24aed9ed0e
-      GUID[0]: imdb://tt60212719
-      GUID[1]: tmdb://2493110
-      GUID[2]: tvdb://399653
+      Plex ID: plex://movie/641c04c7bf014a24aed9ed0ea1cf31d4652343
+      GUID[0]: imdb://tt60253905153905
+      GUID[1]: tmdb://2495390531539051
+      GUID[2]: tvdb://3953905953905653
       ! Date would have changed from 2024-12-23 03:48:53 to 2018-08-21 11:19:43
    - [2] Some other movie title here (2021)
       Added at: 2024-12-23 03:39:05
-      Plex ID: plex://movie/6c2896a40eb6694d3de7886b
-      GUID[0]: imdb://tt32627545
-      GUID[1]: tmdb://1522996
-      GUID[2]: tvdb://365748
+      Plex ID: plex://movie/6c2896a40eb6694d3de7886ba1cf31d4652343
+      GUID[0]: imdb://tt5453262754522
+      GUID[1]: tmdb://152299622992299
+      GUID[2]: tvdb://365748229922995
       ! Date would have changed from 2024-12-23 03:39:05 to 2018-08-21 11:19:43
 
 [user@server plexscripts]$
@@ -67,10 +67,10 @@ Example 2: Because the first two results are the same title, I'm specifying one 
  * Found 1 movie
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
-      Plex ID: plex://movie/6234353454ccb34a1cf31d465fad
-      GUID[0]: imdb://tt2723452640
-      GUID[1]: tmdb://104234453905
-      GUID[2]: tvdb://33603234502
+      Plex ID: plex://movie/631cf31d465234353454ccb34a1cf31d465fad
+      GUID[0]: imdb://tt27234526407234
+      GUID[1]: tmdb://1053905425390534
+      GUID[2]: tvdb://3360539055390532
       ! Date changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43
 
 [user@server plexscripts]$
@@ -82,10 +82,10 @@ Example 3: Will return any title in your Movie library beginning with "Lord".  T
 ```
 
 ### Things to do when I get better at Python:
-- Clean up syntax checking for dates
-- Test and fix for TV series checking also
-- adjust the default token to come from environment variables, like: ```os.environ.get("PLEX_TOKEN")```
-
+- Clean up syntax checking for dates input at the command line
+- Add a feature to subtract or add time from the original value, instead of specifying a complete datetime value
+- Test and fix for TV series checking also, adding logic for episodes and series
+- adjust the default token to come from environment variables, eg, use a value from: ```os.environ.get("PLEX_TOKEN")```
 
 ## Lastly [Disclaimer]:
 - I don't expect that anything could go wrong using these methods.  They seem far safer than messing with the Sqlite db directly, especially since Plex have modified the executable somehow.  All this said, your mileage may vary.  I have taken all care possible, but make no guarantees - all responsibility is yours!
