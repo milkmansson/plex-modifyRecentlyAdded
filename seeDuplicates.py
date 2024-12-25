@@ -86,4 +86,4 @@ else:
     for i, item in enumerate(duplicatesList):
         print("    " + str(i) + " " + item.title)
         for j, file in enumerate(item.media):
-            print("     - [" + str(j) + "] " + file.parts[0].file)
+            print("     - [" + str(j) + "] " + file.parts[0].file + "  " + prettySize(file.parts[0].size) )
