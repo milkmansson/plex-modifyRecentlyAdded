@@ -3,8 +3,8 @@ Some minor scripts for plex that made my life a million times better
 
 ## Modify or remove items from the 'recently added' list
 This feature doesn't exist in the UI, and googling a bit, it has had only a few mentions, but from a long time ago.  Just before I kicked off editing the DB already, I found a neat post from a guy who shared the basics of some python to remove a title from the list.  Problem for me was that there were 100's because I just removed a lot of duplicate files. (For some unknown reason, manually deleting a file causes the title to come back to the very front of the "recently added" list.  The original code seemed to work, but not all the time.  And not so easily on titles with Chinese characters etc.  On items with the same name from different years, it also did not work.  So I had a crack at making it better.  
-* Original link/idea: https://www.reddit.com/r/PleX/comments/11svszf/remove_movie_from_recently_added/
-* Plex Python library: https://python-plexapi.readthedocs.io/en/latest/introduction.html
+* [Original link/idea](https://www.reddit.com/r/PleX/comments/11svszf/remove_movie_from_recently_added/)
+* [Plex Python library](https://python-plexapi.readthedocs.io/en/latest/introduction.html)
 
 ### Prerequisites
 - Get yourself python installed. (Better instructions exist elsewhere for this than I am currently capable of!)
@@ -41,7 +41,7 @@ Example 1: see most recent 3 items on the Recently Added list.  Note the text sh
       GUID[0]: imdb://tt2723452640
       GUID[1]: tmdb://104234453905
       GUID[2]: tvdb://33603234502
-      ! Date would have changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43
+      `#FF0000`! Date would have changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43`#000000`
    - [1] Movie Title Number One (2024)
       Added at: 2024-12-23 03:48:53
       Plex ID: plex://movie/641c04c7bf014a24aed9ed0e
