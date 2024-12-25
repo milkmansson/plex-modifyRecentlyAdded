@@ -31,7 +31,34 @@ Purpose of the script is to have you find what items you want addressed, then ru
 - This is my first foray into Python, and indeed posting anything to Github.  AKA: I have proper script kiddied this up.  I googled what I needed when I needed, to start understanding Python syntax.  I have had success, please try it as you wish, I'll happily take any feedback.
 
 ### Examples
+Example 1: see most recent 3 items on the Recently Added list.  Note the text shows what would have happened as the confirm switch was not supplied:
+'''console
+[user@server plexscripts]$ python3 modifyRecentlyAdded.py -n 3 -T TOKENGOESHERE
+ * Found 3 movies)
+   - [0] Movie Title Number One (1990)
+      Added at: 2024-12-23 03:55:53
+      Plex ID: plex://movie/6234353454ccb34a1cf31d465fad
+      GUID[0]: imdb://tt2723452640
+      GUID[1]: tmdb://104234453905
+      GUID[2]: tvdb://33603234502
+      ! Date would have changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43
+   - [1] Movie Title Number One (2024)
+      Added at: 2024-12-23 03:48:53
+      Plex ID: plex://movie/641c04c7bf014a24aed9ed0e
+      GUID[0]: imdb://tt60212719
+      GUID[1]: tmdb://2493110
+      GUID[2]: tvdb://399653
+      ! Date would have changed from 2024-12-23 03:48:53 to 2018-08-21 11:19:43
+   - [2] Some other movie title here (2021)
+      Added at: 2024-12-23 03:39:05
+      Plex ID: plex://movie/666c2896a40eb94d3de7886b
+      GUID[0]: imdb://tt32627545
+      GUID[1]: tmdb://1299652
+      GUID[2]: tvdb://357486
+      ! Date would have changed from 2024-12-23 03:39:05 to 2018-08-21 11:19:43
 
+[user@server plexscripts]$
+'''
 
 ### Things to do when I get better at Python:
 - Clean up syntax checking for dates
