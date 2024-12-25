@@ -25,6 +25,7 @@ Run the 'modifyRecentlyAdded.py' script and use the following switches (Case Sen
 - -n (--Number): Number of items in the recently added list to operate on.
 - -y (--Confirm): Confirms doing the action on the displayed output.  Script will not make changes without it.
 Purpose of the script is to have you find what items you want addressed, then run it.
+If your data for a switch has a space in it, you will need to specify it in double quotes.
 
 ### Extra Notes
 - Dates in the future will work.
@@ -34,7 +35,7 @@ Purpose of the script is to have you find what items you want addressed, then ru
 ### Examples
 Example 1: see most recent 3 items on the Recently Added list.  Note the text shows what would have happened as the confirm switch was not supplied:
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -n 3 -T TOKENGOESHERE
+[user@server plexscripts]$ python3 modifyRecentlyAdded.py -n 3 -T YOURTOKENGOESHERE
  * Found 3 movies
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
@@ -62,7 +63,7 @@ Example 1: see most recent 3 items on the Recently Added list.  Note the text sh
 ```
 Example 2: Because the first two results are the same title, I'm specifying one by its plex ID.  Note that this time the work is actually done with the final switch (noted on the last line):
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T TOKENGOESHERE -p plex://movie/6234353454ccb34a1cf31d465fad -y
+[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -p plex://movie/6234353454ccb34a1cf31d465fad -y
  * Found 1 movie
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
@@ -73,6 +74,11 @@ Example 2: Because the first two results are the same title, I'm specifying one 
       ! Date changed from 2024-12-23 03:55:53 to 2018-08-21 11:19:43
 
 [user@server plexscripts]$
+```
+
+Example 3: Will return any title in your Movie library beginning with "Lord".  This will include any 'lord of the rings' or 'lord of the flies', etc etc.  Note that if you specify the year as part of the title, it will not be found since Plex stores this value separately from the title:
+```console
+[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -t "Lord"
 ```
 
 ### Things to do when I get better at Python:
