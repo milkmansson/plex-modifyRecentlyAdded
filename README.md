@@ -24,7 +24,15 @@ Run the 'modifyRecentlyAdded.py' script and use the following switches (Case Sen
 - -n (--Number): Number of items in the recently added list to operate on.
 - -y (--Confirm): Confirms doing the action on the displayed output.  Script will not make changes without it.
 Purpose of the script is to have you find what items you want addressed, then run it.
+
 ### Extra Notes
 - Dates in the future will work.
 - Haven't tried it against tv shows yet.  I suspect it might want a bit more work and a few more options, however, this is a starter for 10.
 - This is my first foray into Python, and indeed posting anything to Github.  AKA: I have proper script kiddied this up.  I googled what I needed when I needed, to start understanding Python syntax.  I have had success, please try it as you wish, I'll happily take any feedback.
+
+### Examples
+
+
+### Things to do when I get better at Python:
+- Clean up syntax checking for dates
+- Test and fix for TV series checking also 
