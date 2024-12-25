@@ -90,5 +90,8 @@ Example 3: Will return any title in your Movie library containing "Lord".  This 
 ## [seeDuplicates.py] Show items which have duplicate files
 _Still a work in progress_ Allows me to see items with duplicate files in the console so I can fish for and delete them (as opposed to mess around and find them in the GUI).  Will display these.
 
+## [initiateScan.py] Initiate a library Scan
+_Still a work in progress_ After deleting a bunch of source files, it could take a while before the system registered that they were missing, and then to have them show up in the Recently Added list.  This initiates a library scan. (A quick thing, and not a refresh of metadata etc.)
+
 ## Lastly [Disclaimer]:
 - I don't expect that anything could go wrong using these methods.  They seem far safer than messing with the Sqlite db directly, especially since Plex have modified the executable somehow.  All this said, your mileage may vary.  I have taken all care possible, but make no guarantees - all responsibility is yours!
