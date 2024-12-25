@@ -32,7 +32,7 @@ Purpose of the script is to have you find what items you want addressed, then ru
 
 ### Examples
 Example 1: see most recent 3 items on the Recently Added list.  Note the text shows what would have happened as the confirm switch was not supplied:
-'''console
+```console
 [user@server plexscripts]$ python3 modifyRecentlyAdded.py -n 3 -T TOKENGOESHERE
  * Found 3 movies)
    - [0] Movie Title Number One (1990)
@@ -58,7 +58,7 @@ Example 1: see most recent 3 items on the Recently Added list.  Note the text sh
       ! Date would have changed from 2024-12-23 03:39:05 to 2018-08-21 11:19:43
 
 [user@server plexscripts]$
-'''
+```
 
 ### Things to do when I get better at Python:
 - Clean up syntax checking for dates
