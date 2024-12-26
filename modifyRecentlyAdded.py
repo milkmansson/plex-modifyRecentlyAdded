@@ -14,6 +14,9 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+# Constants
+plexEnvVarName = "PLEX-TOKEN"
+
 # Initialize parser
 parser = argparse.ArgumentParser()
 
@@ -31,9 +34,18 @@ parser.add_argument("-y", "--Confirm", help = "Confirms doing the action on all 
 # Read arguments from command line
 args = parser.parse_args()
 
-if not args.TOKEN:
-    print(bcolors.FAIL + "    No PLEX TOKEN (-T XXXXXX) given" + bcolors.ENDC)
+if not args.TOKEN and not (plexEnvVarName in os.environ):
+    # Neither Exist, bail
+#    print(bcolors.FAIL + "    No PLEX TOKEN (-T XXXXXX) given" + bcolors.ENDC)
     sys.exit(2)
+elif not args.TOKEN and (plexEnvVarName in os.environ):
+    # env var exists, but token not supplied. use env var data
+#    print("* Using Token from env var '" + plexEnvVarName + "'")
+    args.TOKEN = os.environ.get(plexEnvVarName)
+elif args.TOKEN:
+    # argument given, set/replace environment var, use it
+#    print("* Using Token from arguments, saving in env var '" + plexEnvVarName + "'")
+    os.environ[plexEnvVarName] = args.TOKEN
 
 if not args.Library:
     print(bcolors.FAIL + '    No Library (-l "Movies") given' + bcolors.ENDC)

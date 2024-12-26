@@ -10,7 +10,7 @@ This feature doesn't exist in the UI, and googling a bit, it has had only a few 
 Better instructions exist elsewhere for all of these.  I'll link them, where I can.
 - Get yourself python installed.
 - You will need to install [Plex Python library](https://python-plexapi.readthedocs.io/en/latest/introduction.html)
-- You will need a [Plex Token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/) for authentication purposes in this version.  (There is a username/password method which I may implement later, however I have 2FA and I don't believe that works with this.)
+- You will need a [Plex Token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/) for authentication purposes in this version.  (There is a username/password method which I may implement later, however I have 2FA and I don't believe that works with this.)  Additional info [here](https://www.plexopedia.com/plex-media-server/general/plex-token/).
  
 ### To make it work
 The script works by assembling a query/list of things to set a date on.  It will return other identifiers (plex GUID, IMDB GUID, etc) for the titles you find, in case there are more than one.  You can run it again against specific ones by using the actual IDs if you need.  Alternatively, run it with an -n, and it will show the last n results.  Without the required 'confirm' switch below, it will only display what it would do.  When you are happy with the items found, include the the confirm switch to make it actually do the work.
