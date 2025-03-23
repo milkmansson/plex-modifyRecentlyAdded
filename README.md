@@ -132,7 +132,7 @@ Example 4: Will set the first 4 things in the 'Recently Added' list to their ind
 ## [seeDuplicates.py] Show items which have duplicate files
 _Still a work in progress_ Allows me to see items with duplicate files in the console so I can fish for and delete them (as opposed to mess around and find them in the GUI).  Will display these.  Example:
 ```console
-[user@server plexscripts]$ python3 ./seeDuplicates.py -T A-9n6RXyR5Qsbnesmjtk
+[user@server plexscripts]$ python3 ./seeDuplicates.py -T YOURTOKENGOESHERE
     0 TITLE-1
      - [0] /mnt/sdb1/<path>/Title-1 Dir Title 1080p/Title.Extended.Cut.2021.1080p.mkv  13 GB
      - [1] /mnt/sdf1/<path>/Title-1 Dir (2021)/Movie.Title.1.H264-ABC-AsRed.mkv  5 GB
@@ -158,7 +158,7 @@ Requires the same arguments to contact the plex server:
 [user@server plexscripts]$ python3 ./seeDuplicates.py
     No PLEX TOKEN (-T XXXXXX) given
 
-[user@server plexscripts]$ python3 ./seeDuplicates.py -T <TOKEN>
+[user@server plexscripts]$ python3 ./seeDuplicates.py -T YOURTOKENGOESHERE
     .....
 ```
 
