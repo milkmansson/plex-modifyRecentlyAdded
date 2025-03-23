@@ -15,20 +15,20 @@ Better instructions exist elsewhere for all of these.  I'll link them, where I c
 ### To make it work
 The script works by assembling a query/list of things to set a date on.  It will return other identifiers (plex GUID, IMDB GUID, etc) for the titles you find, in case there are more than one.  You can run it again against specific ones by using the actual IDs if you need.  Alternatively, run it with an -n, and it will show the last n results.  Without the required 'confirm' switch below, it will only display what it would do.  When you are happy with the items found, include the the confirm switch to make it actually do the work.
 Run the 'modifyRecentlyAdded.py' script and use the following switches (Case Sensitive):
-Setup:
+##### Setup:
 - -T (--TOKEN): get yourself a Plex Token for authentication.
 - -l (--Library):  I thought I was going to use this, unimplemented for now. Plex library name (eg, 'Movies', also default)", type=str, default="Movies"
 - -b (--BaseURL): BaseURL for Plex connection. Defaults to 'http://localhost:32400'
-Selectors:
+##### Selectors:
 - -t (--Title): Movie title for searching
 - -p (--Plexid): Movie Plex ID for searching (eg like: 'plex://movie/nnnnnnnnnn')
 - -g (--Guid): Movie agent identifier/GUID for finding the item (eg like: 'imdb://ttnnnnnnnn')
 - -n (--Number): Number of items in the recently added list to operate on.
-Setting the DateTime value:
+##### Setting the DateTime value:
 - -d (--Date): Give the new date for setting the 'addedAt' to.  Defaults to "2018-08-21 11:19:43" if you don't set one.  Useful for pushing things forward or back in the list as far as desired.
 - -r (--Release): Set the 'addedAt' to the item's 'originallyAvailableAt' value.  (Essentially the cinematic release date, normally as found by the Plex Agent.)  Useful for a sensible push back.
 - -N (--RightNow): Set the 'addedAt' date to the the datetime right now.  Useful for bringing the item forward from the past.
-Write Switch:
+##### Write Switch:
 - -y (--Confirm): Confirms doing the action on the displayed output.  Script will not make any adjustments without this switch being set.
 
 ### Extra Notes
