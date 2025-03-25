@@ -13,7 +13,7 @@ Better instructions exist elsewhere for all of these.  I'll link them, where I c
 The script works by assembling a query/list of things to set a date on.  It will return other identifiers (plex GUID, IMDB GUID, etc) for the titles you find, in case there are more than one.  You can run it again against specific ones by using the actual IDs if you need.  Alternatively, run it with an -n, and it will show the last n results.  Without the required 'confirm' switch below, it will only display what it would do.  When you are happy with the items found, include the the confirm switch to make it actually do the work.
 Run the 'modifyRecentlyAdded.py' script and use the following switches (Case Sensitive):
 ### Setup:
-- -T (--TOKEN): get yourself a Plex Token for authentication.
+- -T (--TOKEN): Supply your Plex token to authenticate
 - -l (--Library):  I thought I was going to use this, unimplemented for now. Plex library name (eg, 'Movies', also default)", type=str, default="Movies"
 - -b (--BaseURL): BaseURL for Plex connection. Defaults to 'http://localhost:32400'
 ### Selectors:
