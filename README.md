@@ -38,7 +38,7 @@ Run the 'modifyRecentlyAdded.py' script and use the following switches (Case Sen
 ### Example 1: 
 See most recent 3 items on the Recently Added list.  Note the text shows what would have happened as the confirm switch was not supplied:
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -n 3 -T YOURTOKENGOESHERE
+[user@server plexscripts]$ python3 plex-modifyRecentlyAdded.py -n 3 -T YOURTOKENGOESHERE
  * Found 3 movies
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
@@ -67,7 +67,7 @@ See most recent 3 items on the Recently Added list.  Note the text shows what wo
 ### Example 2: 
 Because the first two results are the same title, I'm specifying one by its plex ID.  Note that this time the work is actually done with the final switch (noted on the last line):
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -p plex://movie/62343531cf31d465454ccb34afad -y
+[user@server plexscripts]$ python3 plex-modifyRecentlyAdded.py -T YOURTOKENGOESHERE -p plex://movie/62343531cf31d465454ccb34afad -y
  * Found 1 movie
    - [0] Movie Title Number One (1990)
       Added at: 2024-12-23 03:55:53
@@ -82,13 +82,13 @@ Because the first two results are the same title, I'm specifying one by its plex
 ### Example 3:
 Will return any title in your Movie library containing "Lord".  This will include any 'lord of the rings', 'lord of the flies', 'sealord', etc etc.  Note that if you specify the year as part of the title, it will not be found since Plex stores this value separately from the title:
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -t "Lord"
+[user@server plexscripts]$ python3 plex-modifyRecentlyAdded.py -T YOURTOKENGOESHERE -t "Lord"
 ```
 
 ### Example 4:
 Will set the first 4 things in the 'Recently Added' list to their individual release dates.  Script describes what it would have done, if it had the -y switch, but does not write anything to the database:
 ```console
-[user@server plexscripts]$ python3 modifyRecentlyAdded.py -T YOURTOKENGOESHERE -n 4 -r
+[user@server plexscripts]$ python3 plex-modifyRecentlyAdded.py -T YOURTOKENGOESHERE -n 4 -r
  * Found 4 movies
  - [  1] Something I Want to Watch (2016)
          Added: 2025-03-24 20:00:00
