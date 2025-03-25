@@ -129,38 +129,6 @@ Example 4: Will set the first 4 things in the 'Recently Added' list to their ind
 - Test and fix for TV series checking also, adding logic for episodes and series
 - adjust the default token to come from environment variables, eg, use a value from: ```os.environ.get("PLEX_TOKEN")```
 
-## [seeDuplicates.py] Show items which have duplicate files
-_Still a work in progress_ Allows me to see items with duplicate files in the console so I can fish for and delete them (as opposed to mess around and find them in the GUI).  Will display these.  Example:
-```console
-[user@server plexscripts]$ python3 ./seeDuplicates.py -T YOURTOKENGOESHERE
-    0 TITLE-1
-     - [0] /mnt/sdb1/<path>/Title-1 Dir Title 1080p/Title.Extended.Cut.2021.1080p.mkv  13 GB
-     - [1] /mnt/sdf1/<path>/Title-1 Dir (2021)/Movie.Title.1.H264-ABC-AsRed.mkv  5 GB
-    1 TITLE-2
-     - [0] /mnt/sdc1/<path>/Title-2 Dir Title 1080p/Title.2002.1080p.BluRay.x264-GROUP.mkv  8 GB
-     - [1] /mnt/sdd1/<path>/Title-2 Dir Title 1080p/Title.2002.1080p.BluRay.x264-GROUP.mkv  8 GB
-    2 TITLE-3
-     - [0] /mnt/sdd1/<path>/Title-3 Dir Title 1080p/m-title-1-t-a.avi  700 MB
-     - [1] /mnt/sdd1/<path>/Title-3 Dir Title 1080p/m-title-1-t-b.avi  699 MB
-    3 TITLE-7
-     - [0] /mnt/sdc1/<path>/7 2009 1080p/7.m2ts  3 GB
-     - [1] /mnt/sdb1/<path>/7 2009 720p/7.2009.720p.mkv  6 GB
-```
-Note that:
-- 'Matches' are where Plex's database has recorded a 'match' - eg, that the two files are the same movie.  Matches can be wrong, and can be manually made, these are all still matches as far as this output is concerned - that is, if Plex is wrong, this is wrong.
-- Title 1: Example of match with different filenames
-- Title 2: Example of same filename, different directories
-- Title 3: Example of an old movie witht two files that follow on from eachother in the old way that used to be done.  Be careful of these - deleting one of those might result in deleting half a movie.
-- Title 7: Example match where two completely different types of files are there in the database.
-
-Requires the same arguments to contact the plex server:
-```console
-[user@server plexscripts]$ python3 ./seeDuplicates.py
-    No PLEX TOKEN (-T XXXXXX) given
-
-[user@server plexscripts]$ python3 ./seeDuplicates.py -T YOURTOKENGOESHERE
-    .....
-```
 
 
 ## [initiateScan.py] Initiate a library Scan
